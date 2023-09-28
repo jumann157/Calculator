@@ -16,9 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * A simple calculator that works in order operation. Returns in int only.
- *  Better used with whole number to avoid miscalculations.
- *
+ * A simple calculator that works in order operation.
  * @Juman
  * @v3
  */
@@ -273,24 +271,24 @@ public class Calculator implements ActionListener
 		return c == 'x' || c == '÷' || c == '-' || c == '+';
 	}
          
-	public static int evaluation(String postfix) {
-		Stack<Integer> eval = new Stack<>();
+	public static Float evaluation(String postfix) {
+		Stack<Float> eval = new Stack<>();
 		String[] tokens = postfix.split("\\s+"); // Split by one or more spaces
 		
 		
 		for(String token: tokens) {
 		            if (isNumeric(token)) {
-				int integer = Integer.parseInt(token); 
-				eval.push(integer);
+				float f = Float.parseFloat(token);  
+				eval.push(f);
 				System.out.println(eval);
 			}
 			else if(isOperatorV(token)) {
-				int num1 = eval.pop();
+				float num1 = eval.pop();
 				System.out.println(num1);
-				int num2 = eval.pop();
+				float num2 = eval.pop();
 				System.out.println(num2);
 				
-				int value = 0;
+				float value = 0;
 				switch(token) {
 				
 				case "+":
