@@ -268,6 +268,7 @@ public class Calculator implements ActionListener
 		return value;
 	}
 	
+	//used for the infixToPostfix method
 	public static boolean isOperator(char c) {
 		return c == 'x' || c == '÷' || c == '-' || c == '+';
 	}
@@ -325,6 +326,7 @@ public class Calculator implements ActionListener
 		return b;
 	}
 	
+	//used for the evaluation method
 	public static boolean isOperatorV(String c) {
 		return c.equals("x") || c.equals("÷") || c.equals("+") || c.equals("-");
 	}
